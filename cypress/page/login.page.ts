@@ -9,9 +9,9 @@ class LoginPage {
         this.login = "#SubmitLogin";
     }
 
-    public logIn(): void {
-        cy.get(this.email).type("aperdomobo@gmail.com");
-        cy.get(this.passwd).type("WorkshopProtractor");
+    public logIn(email: string,passwd: string): void {
+        cy.get(this.email).type(email)
+        cy.get(this.passwd).type(passwd);
         cy.get(this.login).click();
     }
 }

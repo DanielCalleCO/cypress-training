@@ -1,5 +1,11 @@
-import {MenuContentPage, ProductListPage, ShopingCartPage, LoginPage} from "../page/index";
-import {AddressPage, ShippingPage, PaymentPage} from "../page/index";
+import {MenuContentPage,
+  ProductListPage,
+  ShopingCartPage,
+  LoginPage,
+  AddressPage,
+  ShippingPage,
+  PaymentPage,
+} from "../page/index";
 
 const menuContentPage = new MenuContentPage();
 const productListPage = new ProductListPage();
@@ -16,14 +22,11 @@ describe("Buy a t-shirt", () => {
     productListPage.visitProductList();
     productListPage.goToCheckout();
     shopingCartPage.visitShopingCart();
-    loginPage.logIn();
+    loginPage.logIn("aperdomobo@gmail.com", "WorkshopProtractor");
     addressPage.confirmAdress();
     shippingPage.confirmTermsAndShip();
-    paymentPage.confirmPaymentAndShip();
-
-    cy.get("#center_column > div > p > strong").should(
-        "have.text",
-        "Your order on My Store is complete.",
-    );
+    paymentPage.confirmPayment();
+    paymentPage.shipOrder();
+    paymentPage.getConfirmationTitle();
   });
 });
