@@ -19,8 +19,8 @@ class PaymentPage {
         cy.get(this.button).contains(this.confirm).click();
     }
 
-public getConfirmationTitle(method: string,text: string): void {
-    cy.get(this.title).should(method,text)
+public getConfirmationTitle(): void {
+    cy.get(this.title);
 }
 }
 
