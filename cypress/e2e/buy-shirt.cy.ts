@@ -25,8 +25,9 @@ describe("Buy a t-shirt", () => {
     loginPage.logIn("aperdomobo@gmail.com", "WorkshopProtractor");
     addressPage.confirmAdress();
     shippingPage.confirmTermsAndShip();
-    paymentPage.confirmPayment();
-    paymentPage.shipOrder();
-    paymentPage.getConfirmationTitle();
+    paymentPage.confirmBankWirePayment();
+    paymentPage.confirmOrder();
+    paymentPage.getConfirmationTitle("have.text",
+        "Your order on My Store is complete.");
   });
 });

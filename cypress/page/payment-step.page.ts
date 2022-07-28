@@ -11,19 +11,16 @@ class PaymentPage {
         this.title = "#center_column > div > p > strong";
     }
 
-    public confirmPayment(): void {
+    public confirmBankWirePayment(): void {
 
         cy.get(this.payment).click();
     }
-    public shipOrder(): void {
+    public confirmOrder(): void {
         cy.get(this.button).contains(this.confirm).click();
     }
 
-public getConfirmationTitle(): void {
-    cy.get(this.title).should(
-        "have.text",
-        "Your order on My Store is complete.",
-    );
+public getConfirmationTitle(method: string,text: string): void {
+    cy.get(this.title).should(method,text)
 }
 }
 
