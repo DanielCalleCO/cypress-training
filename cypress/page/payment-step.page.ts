@@ -8,7 +8,7 @@ class PaymentPage {
         this.payment = "[ title = \"Pay by bank wire\" ]";
         this.confirm = "I confirm my order";
         this.button = "button";
-        this.title = ".cheque-indent > ";
+        this.title = ".cheque-indent > .dark";
     }
 
     public confirmBankWirePayment(): void {
