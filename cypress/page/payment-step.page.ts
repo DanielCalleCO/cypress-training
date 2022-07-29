@@ -19,9 +19,9 @@ class PaymentPage {
         cy.get(this.button).contains(this.confirm).click();
     }
 
-public getConfirmationTitle(): void {
-    cy.get(this.title);
-}
+    public getConfirmationTitle() {
+        return cy.get(this.title);
+    }
 }
 
 export { PaymentPage }
